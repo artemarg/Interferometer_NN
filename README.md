@@ -1,13 +1,14 @@
 # Interferometer_NN
 
-# 0.Experiment
+# 1.Introduction
 
-We prepared aqueous suspensions of CDs with fixed concentration (8 mg/L) comprising heavy metal ions Cu<sup>2+</sup>, Ni<sup>2+</sup>, Cr<sup>3+</sup> with concentrations varying from 0 to 4.95 mM with 0.55 mM increment. For that pupose we added Cu(NO<sub>3</sub>)<sub>2</sub> , Ni(NO<sub>3</sub>)<sub>2</sub> , Cr(NO<sub>3</sub>)<sub>3</sub> salts to the CD-suspension in such quantities that Cu<sup>2+</sup>, Ni<sup>2+</sup>, Cr<sup>3+</sup> cations were present in the suspensions in desired concentrations.
-Totally, 1000 suspensions were prepared.
+**A programmable N-channel interferometer** is a waveguide structure equipped with tunable phase shifters that adjust the phase values in the device's channels and beam splitters that redistribute optical radiation between the channels.
 
-We used Shimadzu RF-6000 spectrofluorimeter to register excitation-emission matrices (EEM) of CD's aqueous suspensions in the presence of heavy metal ions. Fluorescensce signal was excited under radiation with wavelengths ranging from 250 to 450 nm with 5 nm increment - that is 41 excitation wavelengths. Each fluorescence spectrum was registered in a range from 250 to 750 nm with 1 nm increment - that is 500 spectral channels.
+Using a set of phase shifters **ϕ**, a specific **N×N unitary transformation matrix U(ϕ)** can be programmed and applied to the input vector of the light field's amplitudes, yielding the result of matrix-vector multiplication.
 
-# 1.Dataset
+Our goal is to develop a **digital model of the optical chip** on a computer, which will then be used to determine the required phase shifts **ϕ** for programming a given unitary transformation **U(ϕ)**.
+
+# 2.Physical Model of 1-Layer Universal Robust Interferometer
 
 We registered 1000 EEMs corresponding to CD's aqueous suspensions with one, two and three cation types Cu<sup>2+</sup>, Ni<sup>2+</sup>, Cr<sup>3+</sup>.
 ![plot](https://github.com/oesarmanova/CD_HM_sensor/blob/main/sample_1.png)
