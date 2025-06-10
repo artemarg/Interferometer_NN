@@ -188,6 +188,9 @@ We trained a Transformer network to solve the inverse problem:
   - Transfer matrix
 - **Output**:
   - 40 reconstructed physical chip parameters
+  
+Run in Colab
 
+Clements_40_parameters.ipynb
 ## Training Results
 ![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai6.PNG)
