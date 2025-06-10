@@ -7,11 +7,11 @@
 Using a set of phase shifters **ϕ**, a specific **N×N unitary transformation matrix U(ϕ)** can be programmed and applied to the input vector of the light field's amplitudes, yielding the result of matrix-vector multiplication.
 
 Our goal is to develop a **digital model of the optical chip** on a computer, which will then be used to determine the required phase shifts **ϕ** for programming a given unitary transformation **U(ϕ)**.
-![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai1.PNG)
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai1.PNG)
 # 2.Physical Model of 1-Layer Universal Robust Interferometer
 
 The physical model of the interferometer is represented as a product of **unitary matrices** describing the individual components of the linear optical scheme: a layer of three phase shifters $P(\theta_{1-3})$ and mixing layers—multichannel beam splitters M₁ and M₂. The unitary matrices depended on trainable physical parameters. In total, the model contained 34 trainable physical parameters.
-![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai41.PNG)
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai41.PNG)
 # Dataset Description
 
 ## Folder Structure
@@ -71,7 +71,7 @@ dataset/
 # 3.Physical Model of 3-Layer Universal Robust Interferometer
 
 The physical model of the interferometer is represented as a product of **unitary matrices** describing the individual components of the linear optical scheme: 3 layers of 3 phase shifters $P_1(\theta_{1-3}),P_2(\theta_{4-6}),P_3(\theta_{7-9})$ and 4 mixing layers—multichannel beam splitters $M_1,M_2,M_3,M_4$. The unitary matrices depended on trainable physical parameters. In total, the model contained 72 trainable physical parameters.
-![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai3.PNG)
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai3.PNG)
 # Dataset Description
 
 ## Folder Structure
@@ -149,7 +149,7 @@ The study compared three distinct neural network approaches:
 2. **ResNet** - Residual network with skip connections
 3. **Transformer** - Self-attention based model
    
-![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai5.PNG)
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai5.PNG)
 ## Training Results
 
 | Dataset Size | Baseline | Transformer | ResNet |
@@ -161,7 +161,7 @@ The study compared three distinct neural network approaches:
 *Table: Average fidelity scores across different dataset sizes and models*
 
 # 5.Reconstruction of 40 Physical Parameters in Clements Chip Using Neural Networks
-![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai7.PNG)
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai7.PNG)
 ## Dataset Generation
 We generated an artificial dataset containing:
 - 400 unique Clements Chips with different sets of 40 physical parameters $R,\alpha,\phi_0,T_{out}$
@@ -183,4 +183,4 @@ We trained a Transformer network to solve the inverse problem:
   - 40 reconstructed physical chip parameters
 
 ## Training Results
-![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai6.PNG)
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai6.PNG)
