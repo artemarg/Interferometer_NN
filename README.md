@@ -148,7 +148,8 @@ The study compared three distinct neural network approaches:
 1. **Baseline Model** - Conventional architecture serving as reference
 2. **ResNet** - Residual network with skip connections
 3. **Transformer** - Self-attention based model
-
+   
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai5.PNG)
 ## Training Results
 
 | Dataset Size | Baseline | Transformer | ResNet |
@@ -160,10 +161,10 @@ The study compared three distinct neural network approaches:
 *Table: Average fidelity scores across different dataset sizes and models*
 
 # 5.Reconstruction of 40 Physical Parameters in Clements Chip Using Neural Networks
-
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai7.PNG)
 ## Dataset Generation
 We generated an artificial dataset containing:
-- 400 unique Clements Chips with different sets of 40 physical parameters
+- 400 unique Clements Chips with different sets of 40 physical parameters $R,\alpha,\phi_0,T_{out}$
 - 400 random current configurations
 
 ### Physical Model Simulation:
@@ -182,4 +183,4 @@ We trained a Transformer network to solve the inverse problem:
   - 40 reconstructed physical chip parameters
 
 ## Training Results
-[Graphs]
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai6.PNG)
