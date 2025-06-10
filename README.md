@@ -13,9 +13,9 @@ Our goal is to develop a **digital model of the optical chip** on a computer, wh
 The physical model of the interferometer is represented as a product of **unitary matrices** describing the individual components of the linear optical scheme: a layer of three phase shifters $P(\theta_{1-3})$ and mixing layers—multichannel beam splitters M₁ and M₂. The unitary matrices depended on trainable physical parameters. In total, the model contained 34 trainable physical parameters.
 ![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai41.PNG)
 # Dataset Description
-
+Go to the link in the Physical_1_Layer folder
 ## Folder Structure
-dataset/
+Calibration_Data_One_Layer_925_nm/
 ├── channel_1/
 
 │ ├── ch1_H1.txt
@@ -68,14 +68,18 @@ dataset/
 | Output intensities       | Recorded in corresponding text file |
 
 > **Note:** The "a.u." stands for arbitrary units of current applied to heating elements.
+
+Run in Colab
+
+PhysicalModel_1_Layer.ipynb
 # 3.Physical Model of 3-Layer Universal Robust Interferometer
 
 The physical model of the interferometer is represented as a product of **unitary matrices** describing the individual components of the linear optical scheme: 3 layers of 3 phase shifters $P_1(\theta_{1-3}),P_2(\theta_{4-6}),P_3(\theta_{7-9})$ and 4 mixing layers—multichannel beam splitters $M_1,M_2,M_3,M_4$. The unitary matrices depended on trainable physical parameters. In total, the model contained 72 trainable physical parameters.
 ![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai3.PNG)
 # Dataset Description
-
+Go to the link in the Physical_3_Layers folder
 ## Folder Structure
-dataset/
+2024_10_16_980_Calibration/
 ├── channel_1/
 
 │ ├── ch1_H1.txt
@@ -160,6 +164,9 @@ The study compared three distinct neural network approaches:
 
 *Table: Average fidelity scores across different dataset sizes and models*
 
+Run in Colab
+
+Neural_1_Layer.ipynb
 # 5.Reconstruction of 40 Physical Parameters in Clements Chip Using Neural Networks
 ![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai7.PNG)
 ## Dataset Generation
