@@ -7,11 +7,11 @@
 Using a set of phase shifters **ϕ**, a specific **N×N unitary transformation matrix U(ϕ)** can be programmed and applied to the input vector of the light field's amplitudes, yielding the result of matrix-vector multiplication.
 
 Our goal is to develop a **digital model of the optical chip** on a computer, which will then be used to determine the required phase shifts **ϕ** for programming a given unitary transformation **U(ϕ)**.
-
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai1.PNG)
 # 2.Physical Model of 1-Layer Universal Robust Interferometer
 
-We registered 1000 EEMs corresponding to CD's aqueous suspensions with one, two and three cation types Cu<sup>2+</sup>, Ni<sup>2+</sup>, Cr<sup>3+</sup>.
-![plot](https://github.com/oesarmanova/CD_HM_sensor/blob/main/sample_1.png)
+The physical model of the interferometer is represented as a product of unitary matrices describing the individual components of the linear optical scheme: a layer of phase delays P($\theta$) and mixing layers—multichannel beam splitters M₁ and M₂. The unitary matrices depended on trainable physical parameters. In total, the model contained 34 trainable physical parameters.
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai4.PNG)
 ![plot](https://github.com/oesarmanova/CD_HM_sensor/blob/main/sample_3_comp.png)
 
 The Figure above shows EEM. Up: CD suspension without cations. Down: CD suspension with three cations.
