@@ -80,7 +80,7 @@ The physical model of the interferometer is represented as a product of **unitar
 Go to the link in the Physical_3_Layers folder
 ## Folder Structure
 2024_10_16_980_Calibration/
-├── channel_1/
+├── input_1/
 
 │ ├── ch1_H1.txt
 
@@ -88,7 +88,7 @@ Go to the link in the Physical_3_Layers folder
 
 │ └── ch1_H9.txt
 
-├── channel_2/
+├── input_2/
 
 │ ├── ch2_H1.txt
 
@@ -96,7 +96,7 @@ Go to the link in the Physical_3_Layers folder
 
 │ └── ch2_H9.txt
 
-├── channel_3/
+├── input_3/
 
 │ ├── ch3_H1.txt
 
@@ -104,7 +104,7 @@ Go to the link in the Physical_3_Layers folder
 
 │ └── ch3_H9.txt
 
-└── channel_4/
+└── input_4/
 
 ├── ch4_H1.txt
 
