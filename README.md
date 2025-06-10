@@ -10,43 +10,176 @@ Our goal is to develop a **digital model of the optical chip** on a computer, wh
 ![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai1.PNG)
 # 2.Physical Model of 1-Layer Universal Robust Interferometer
 
-The physical model of the interferometer is represented as a product of unitary matrices describing the individual components of the linear optical scheme: a layer of phase delays P($\theta$) and mixing layers—multichannel beam splitters M₁ and M₂. The unitary matrices depended on trainable physical parameters. In total, the model contained 34 trainable physical parameters.
-![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai4.PNG)
-![plot](https://github.com/oesarmanova/CD_HM_sensor/blob/main/sample_3_comp.png)
+The physical model of the interferometer is represented as a product of **unitary matrices** describing the individual components of the linear optical scheme: a layer of three phase shifters $P(\theta_{1-3})$ and mixing layers—multichannel beam splitters M₁ and M₂. The unitary matrices depended on trainable physical parameters. In total, the model contained 34 trainable physical parameters.
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai41.PNG)
+# Dataset Description
 
-The Figure above shows EEM. Up: CD suspension without cations. Down: CD suspension with three cations.
+## Folder Structure
+dataset/
+├── channel_1/
 
-Each row in the matrix represents a fluorescence spectra at particular excitation wavlengths and comprises 500 spectral channels. Each column in the matrix represents excitation spectra registered in a particular spectral channel and comprises 41 channels. Thus, initial data represents 2D arrays of (41x500) size.
+│ ├── ch1_H1.txt
 
-The dataset comprises 27 single-component suspensions (i.e. suspensions, containing 1 cation type), 240 double-component suspensions (containing 2 cation types), and 732 triple-component suspensions. One sample corresponds to the case when all the cations are not present in the suspension.
+│ ├── ch1_H2.txt
 
-The dataset is present here https://github.com/oesarmanova/CD_HM_sensor/tree/main/CD_HM_dataset.
+│ └── ch1_H3.txt
 
-# 2.Training Approaches
+├── channel_2/
 
-Multilayer Perceptrons (MLP)
+│ ├── ch2_H1.txt
 
-| Approach  | Wavelength of FL Excitation | Sample size |
-| --- | --- | --- |
-| MLP_1W  | 350 nm  | (1x500) |
-| MLP_3W  | 250, 350, 450 nm  | (1x1500) |
-| MLP_41W  | 41 wavelengths in range 250 – 450 nm with 5 nm increment | (1x20500) |
+│ ├── ch2_H2.txt
 
-Convolutional neural networks (CNN)
+│ └── ch2_H3.txt
 
-| Approach  | Number of channels | Sample size |
-| --- | --- | --- |
-| CNN_1D  | 41  | (41x1x500) |
-| CNN_2D  | 1  | (1x41x500) |
+├── channel_3/
 
-# 3.Code files
+│ ├── ch3_H1.txt
 
-Run in Colab
+│ ├── ch3_H2.txt
 
-CD_HM_2D_CNN.ipnb - use to train 2D CNN
+│ └── ch3_H3.txt
 
-CD_HM_1D_CNN.ipnb - use to train 1D CNN
+└── channel_4/
 
-CD_HM_MLP.ipnb - use to train MLPs (MLP_1W, MLP_3W, MLP_41W)
+├── ch4_H1.txt
 
-Get_statistics.ipnb - use to get statistics of the model performance
+├── ch4_H2.txt
+
+└── ch4_H3.txt
+
+
+
+## Naming Convention
+
+- **Folder names** `channel_X` indicate the input channel number (1-4) where:
+  - `X` = channel number where laser radiation was injected
+
+- **File names** `ch[i]_H[j].txt` represent:
+  - `i` = input channel number (matches folder number)
+  - `j` = heating element number (1-3)
+
+## Experimental Setup
+
+| Parameter          | Description                          |
+|--------------------|--------------------------------------|
+| Radiation input    | Directed to channel specified by `i` |
+| Current injection  | Applied to heating element `j` with values ranging from **0 to 1300 a.u.** with **10 a.u.** step |
+| Output intensities       | Recorded in corresponding text file |
+
+> **Note:** The "a.u." stands for arbitrary units of current applied to heating elements.
+# 3.Physical Model of 3-Layer Universal Robust Interferometer
+
+The physical model of the interferometer is represented as a product of **unitary matrices** describing the individual components of the linear optical scheme: 3 layers of 3 phase shifters $P_1(\theta_{1-3}),P_2(\theta_{4-6}),P_3(\theta_{7-9})$ and 4 mixing layers—multichannel beam splitters $M_1,M_2,M_3,M_4$. The unitary matrices depended on trainable physical parameters. In total, the model contained 72 trainable physical parameters.
+![plot](https://github.com/artemarg/Interferometer_NN/blob/main/msuai3.PNG)
+# Dataset Description
+
+## Folder Structure
+dataset/
+├── channel_1/
+
+│ ├── ch1_H1.txt
+
+│ ├── ...
+
+│ └── ch1_H9.txt
+
+├── channel_2/
+
+│ ├── ch2_H1.txt
+
+│ ├── ...
+
+│ └── ch2_H9.txt
+
+├── channel_3/
+
+│ ├── ch3_H1.txt
+
+│ ├── ...
+
+│ └── ch3_H9.txt
+
+└── channel_4/
+
+├── ch4_H1.txt
+
+├── ...
+
+└── ch4_H9.txt
+
+
+
+## Naming Convention
+
+- **Folder names** `channel_X` indicate the input channel number (1-4) where:
+  - `X` = channel number where laser radiation was injected
+
+- **File names** `ch[i]_H[j].txt` represent:
+  - `i` = input channel number (matches folder number)
+  - `j` = heating element number (1-9)
+
+## Experimental Setup
+
+| Parameter          | Description                          |
+|--------------------|--------------------------------------|
+| Radiation input    | Directed to channel specified by `i` |
+| Current injection  | Applied to heating element `j` with values ranging from **0 to 1500 a.u.** with **10 a.u.** step |
+| Output intensities       | Recorded in corresponding text file |
+
+# 4.Neural Network Model of 1-Layer Universal Robust Interferometer
+
+## Dataset Generation
+An artificial dataset was first created using the physical model described in Section 2.
+
+### Input Features:
+- Channel number
+- Random triplets of heating element currents
+
+### Output:
+- 4 normalized output intensities
+
+### Evaluation Metric:
+Fidelity between the interferometer's transfer matrices
+
+## Experimental Setup
+
+The study compared three distinct neural network approaches:
+1. **Baseline Model** - Conventional architecture serving as reference
+2. **ResNet** - Residual network with skip connections
+3. **Transformer** - Self-attention based model
+
+## Training Results
+
+| Dataset Size | Baseline | Transformer | ResNet |
+|-------------|----------|-------------|-----------|
+| 500 matrices | 0.920 | 0.950 | 0.947 |
+| 2000 matrices | 0.954 | 0.989 | 0.988 |
+| 5000 matrices | 0.965 | 0.994 | 0.994 |
+
+*Table: Average fidelity scores across different dataset sizes and models*
+
+# 5.Reconstruction of 40 Physical Parameters in Clements Chip Using Neural Networks
+
+## Dataset Generation
+We generated an artificial dataset containing:
+- 400 unique Clements Chips with different sets of 40 physical parameters
+- 400 random current configurations
+
+### Physical Model Simulation:
+- **Input**: 
+  - Random current configuration
+  - 40 physical chip parameters
+- **Output**: 
+  - Transfer matrix
+
+## Neural Network Training
+We trained a Transformer network to solve the inverse problem:
+- **Input**:
+  - Random current configuration
+  - Transfer matrix
+- **Output**:
+  - 40 reconstructed physical chip parameters
+
+## Training Results
+[Graphs]
