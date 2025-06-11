@@ -12,6 +12,11 @@ Our goal is to develop a **digital model of the optical chip** on a computer, wh
 
 The physical model of the interferometer is represented as a product of **unitary matrices** describing the individual components of the linear optical scheme: a layer of three phase shifters $P(\theta_{1-3})$ and mixing layers—multichannel beam splitters M₁ and M₂. The unitary matrices depended on trainable physical parameters. In total, the model contained 34 trainable physical parameters.
 ![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai41.PNG)
+
+## Run in Colab
+
+PhysicalModel_1_Layer.ipynb
+
 # Dataset Description
 
 To download dataset go to the link in the Physical_1_Layer folder
@@ -73,13 +78,14 @@ Calibration_Data_One_Layer_925_nm/
 
 R² was used as the metric
 
-Run in Colab
-
-PhysicalModel_1_Layer.ipynb
 # 3.Physical Model of 3-Layer Universal Robust Interferometer
-
 The physical model of the interferometer is represented as a product of **unitary matrices** describing the individual components of the linear optical scheme: 3 layers of 3 phase shifters $P_1(\theta_{1-3}),P_2(\theta_{4-6}),P_3(\theta_{7-9})$ and 4 mixing layers—multichannel beam splitters $M_1,M_2,M_3,M_4$. The unitary matrices depended on trainable physical parameters. In total, the model contained 72 trainable physical parameters.
 ![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai3.PNG)
+
+## Run in Colab
+
+PhysicalModel_3_Layers.ipynb
+
 # Dataset Description
 To download dataset go to the link in the Physical_3_Layers folder
 ## Folder Structure
@@ -137,11 +143,11 @@ To download dataset go to the link in the Physical_3_Layers folder
 
 R² was used as the metric
 
-Run in Colab
-
-PhysicalModel_3_Layers.ipynb
-
 # 4.Neural Network Model of 1-Layer Universal Robust Interferometer
+
+## Run in Colab
+
+Neural_1_Layer.ipynb
 
 ## Dataset Generation
 An artificial dataset was first created using the physical model described in Section 2.
@@ -174,11 +180,12 @@ The study compared three distinct neural network approaches:
 
 *Table: Average fidelity scores across different dataset sizes and models*
 
-Run in Colab
-
-Neural_1_Layer.ipynb
 # 5.Reconstruction of 40 Physical Parameters in Clements Chip Using Neural Networks
+Clements chip schematic (40 physical parameters $R,\alpha,\phi_0,T_{out}$)
 ![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai7.PNG)
+## Run in Colab
+
+Clements_40_parameters.ipynb
 ## Dataset Generation
 We generated an artificial dataset containing:
 - 400 unique Clements Chips with different sets of 40 physical parameters $R,\alpha,\phi_0,T_{out}$
@@ -199,8 +206,5 @@ We trained a Transformer network to solve the inverse problem:
 - **Output**:
   - 40 reconstructed physical chip parameters
   
-Run in Colab
-
-Clements_40_parameters.ipynb
 ## Training Results
 ![plot](https://github.com/artemarg/Interferometer_NN/blob/main/png_files/msuai6.PNG)
