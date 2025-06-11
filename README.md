@@ -69,6 +69,8 @@ Calibration_Data_One_Layer_925_nm/
 
 > **Note:** The "a.u." stands for arbitrary units of current applied to heating elements.
 
+R² was used as the metric
+
 Run in Colab
 
 PhysicalModel_1_Layer.ipynb
@@ -130,6 +132,12 @@ Go to the link in the Physical_3_Layers folder
 | Radiation input    | Directed to channel specified by `i` |
 | Current injection  | Applied to heating element `j` with values ranging from **0 to 1500 a.u.** with **10 a.u.** step |
 | Output intensities       | Recorded in corresponding text file |
+
+R² was used as the metric
+
+Run in Colab
+
+PhysicalModel_3_Layers.ipynb
 
 # 4.Neural Network Model of 1-Layer Universal Robust Interferometer
 
